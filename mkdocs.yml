@@ -1,0 +1,16 @@
+site_name: Galleries Demo
+site_url: http://localhost/
+
+theme:
+  name: material
+
+plugins:
+  - search
+  - media-gallery:
+      images_path: images
+      youtube_links_path: youtube-links.yaml
+      generate_category_pages: true
+
+nav:
+  - Home: index.md
+  - Galleries: galleries.md

@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="{{ base_url }}assets/material-galleries/gallery.css">
+<div class="mg-grid">
+  {% if category %}
+    {% for img in category.images %}
+      <a class="glightbox mg-image" href="{{ base_url }}{{ img }}" data-gallery="{{ category.name }}">
+        <div class="image-wrapper">
+          <div class="skeleton-loader"></div>
+          <img src="{{ base_url }}{{ img }}" alt="{{ category.name }} image" loading="lazy" class="gallery-image" onload="this.classList.add('loaded'); this.previousElementSibling && this.previousElementSibling.classList.add('hidden')">
+        </div>
+      </a>
+    {% endfor %}
+  {% else %}
+    <p>No images found.</p>
+  {% endif %}
+</div>

@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="{{ base_url }}assets/material-galleries/gallery.css">
+<div class="mg-grid">
+  {% for name, cat in categories.items() %}
+    <div class="gallery-category">
+      <div class="header">
+        <h2>{{ name }}</h2>
+        {% if generate_category_pages %}
+          <a href="{{ base_url }}galleries/{{ name }}/" class="see-all-link">View All</a>
+        {% else %}
+          <a href="#{{ name }}" class="see-all-link">View All</a>
+        {% endif %}
+      </div>
+      <a href="{% if generate_category_pages %}{{ base_url }}galleries/{{ name }}/{% else %}#{{ name }}{% endif %}">
+        <div class="image-wrapper">
+          {% if cat.preview %}
+            <div class="skeleton-loader"></div>
+            <img src="{{ base_url }}{{ cat.preview }}" alt="{{ name }}" loading="lazy" class="gallery-image" onload="this.classList.add('loaded'); this.previousElementSibling && this.previousElementSibling.classList.add('hidden')">
+          {% endif %}
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+<script src="{{ base_url }}assets/material-galleries/gallery.js" defer></script>

@@ -1,0 +1,9 @@
+# Either a flat list of video URLs or IDs
+- dQw4w9WgXcQ
+# - https://www.youtube.com/watch?v=abc12345
+
+# Or use categorized form instead:
+# music:
+#   - dQw4w9WgXcQ
+# talks:
+#   - https://www.youtube.com/watch?v=abc12345
