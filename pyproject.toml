@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mkdocs-media-gallery-plugin"
-version = "1.0.0.dev30"
+version = "1.0.0.dev35"
 description = "MkDocs plugin providing media galleries with shortcodes"
 authors = [{ name = "APinchofDill" }]
 readme = "README.md"

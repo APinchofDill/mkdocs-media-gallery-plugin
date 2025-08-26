@@ -1,17 +1,22 @@
 <link rel="stylesheet" href="{{ base_url }}assets/material-galleries/gallery.css">
 {% if by_category %}
-    {% for videos in categories.items() %}
-<div class="gallery-category">
-        <a href="#yt-{{ name }}">
-          <div class="image-wrapper">
-            {% set preview_id = videos|first %}
-            {% if preview_id %}
-              <div class="skeleton-loader"></div>
-              <img src="https://i.ytimg.com/vi/{{ preview_id }}/hqdefault.jpg" alt="{{ name }}" loading="lazy" class="gallery-image" onload="this.classList.add('loaded'); this.previousElementSibling && this.previousElementSibling.classList.add('hidden')">
-            {% endif %}
-          </div>
-        </a>
+    {% for name, videos in categories.items() %}
+<div class="yt-category">
+  <h2 id="yt-{{ name }}">{{ name }}</h2>
+  <div class="mg-grid">
+    {% for id in videos %}
+    <div class="gallery-category">
+      <a class="glightbox mg-video" href="https://www.youtube.com/watch?v={{ id }}" data-type="video" data-source="youtube">
+        <span class="mg-play"></span>
+        <div class="image-wrapper">
+          <div class="skeleton-loader"></div>
+          <img src="https://i.ytimg.com/vi/{{ id }}/hqdefault.jpg" alt="YouTube {{ id }}" loading="lazy" class="gallery-image" onload="this.classList.add('loaded'); this.previousElementSibling && this.previousElementSibling.classList.add('hidden')">
+        </div>
+      </a>
     </div>
+    {% endfor %}
+  </div>
+</div>
     {% endfor %}
 {% else %}
   {% if single_category %}<h2 id="yt-{{ single_category }}">{{ single_category }}</h2>{% endif %}

@@ -5,7 +5,7 @@ MkDocs plugin for that adds image and YouTube galleries with shortcodes.
 ## Install
 
 ```bash
-pip install 
+pip install mkdocs-media-gallery-plugin
 ```
 
 ## Configure (mkdocs.yml)
