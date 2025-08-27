@@ -11,15 +11,12 @@ pip install mkdocs-media-gallery-plugin
 ## Configure (mkdocs.yml)
 
 ```yaml
-site_name: Demo
 plugins:
   - search
   - media-gallery:
       images_path: images            # relative to docs_dir
       youtube_links_path: youtube-links.yaml  # relative to docs_dir
       generate_category_pages: true  # auto-generate one page per category
-theme:
-  name: material
 ```
 
 ## Shortcodes in Markdown
@@ -32,12 +29,12 @@ theme:
 
 ```yaml
 # Either flat list
-- https://www.youtube.com/shorts/HgLzykU5wc8
-- HgLzykU5wc8
+- https://www.youtube.com/watch?v=ZucM9aw6Qlo
+- sHfe3nT5-jk
 
 # Or categorized
-# music:
-#   - https://www.youtube.com/shorts/HgLzykU5wc8
-# talks:
-#   - HgLzykU5wc8
+Music:
+- https://www.youtube.com/watch?v=mEK0owuRoks
+Shows:
+- https://www.youtube.com/watch?v=ZucM9aw6Qlo
 ```

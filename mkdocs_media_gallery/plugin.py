@@ -23,6 +23,8 @@ SHORTCODE_YOUTUBE = r"\{\{\s*youtube_gallery(?:\s+category=\"(?P<category>[^\"]+
 
 # Module-level logger (inherits level/handlers from MkDocs/root logger)
 log = logging.getLogger("mkdocs.media_gallery")
+# Disable all logging from this plugin
+log.disabled = True
 
 
 @dataclass
